@@ -24,7 +24,7 @@ function getDeck() {
 }
 
 function shuffle(deck) {
-    /* swap every card in random locations 1000 times */
+    /* swap every card in random locations 1000 times. might not be optimal, but should be okay for now */
     for (let i = 0; i < 1000; i++) {
         var location1 = Math.floor((Math.random() * deck.length));
         var location2 = Math.floor((Math.random() * deck.length));
