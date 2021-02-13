@@ -5,10 +5,12 @@ var values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "Skip", "Draw Two", "
 function getDeck() {
     var deck = new Array();
     var card;
-
-    for (let i = 0; i < (values.length * 2); i++) { //every value 2 times in each color
+    
+    for (let i = 0; i < color.length; i++) { //every value 2 times in each color
+        for (let i = 0; i < (values.length * 2); i++) { 
         card = {Value: values[i], Color: color[i]};
         deck.push(card);
+        }
     }
 
     for (let i = 0; i < color.length; i++) {
