@@ -7,7 +7,15 @@ function getDeck() {
     var deck = new Array();
     var card;
     
-    /* every value 2 times in each color */
+    /* every values_1 1 time in each color */
+    for (let i = 0; i < color.length; i++) { 
+        for (let i = 0; i < (value_1.length); i++) { 
+            card = {Value: value_1[i], Color: color[i]};
+            deck.push(card);
+        }
+    }
+
+    /* every values_2 2 times in each color */
     for (let i = 0; i < color.length; i++) { 
         for (let i = 0; i < (values_2.length); i++) { 
             card = {Value: values_2[i], Color: color[i]};
@@ -17,13 +25,6 @@ function getDeck() {
         }
     }
 
-    /* every value 1 time in each color */
-    for (let i = 0; i < color.length; i++) { 
-        for (let i = 0; i < (value_1.length); i++) { 
-            card = {Value: value_1[i], Color: color[i]};
-            deck.push(card);
-        }
-    }
 }
 
 function shuffle(deck) {
