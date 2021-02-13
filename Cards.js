@@ -1,25 +1,33 @@
 /* Reference to better understand the code: https://www.thatsoftwaredude.com/content/6196/coding-a-card-deck-in-javascript */
-var color = ["red", "yellow", "green", "blue"];
+var color = ["red", "yellow", "green", "blue"];   
 var values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "Skip", "Draw Two", "Reverse"];
+var values_2 = ["0", "Wild", "Wild Draw Four"];      //appears twice per color
 
 function getDeck() {
     var deck = new Array();
     var card;
     
-    for (let i = 0; i < color.length; i++) { //every value 2 times in each color
-        for (let i = 0; i < (values.length * 2); i++) { 
-        card = {Value: values[i], Color: color[i]};
-        deck.push(card);
+    /* every value 2 times in each color */
+    for (let i = 0; i < color.length; i++) { 
+        for (let i = 0; i < (values.length); i++) { 
+            card = {Value: values[i], Color: color[i]};
+            deck.push(card);
         }
     }
 
-    for (let i = 0; i < color.length; i++) {
-        card = {Value: "Wild", Color: color[i]};    //create one of these for each color
-        card.push(card);
-        card = {Value: "Wild Draw Four", Color: color[i]};  
-        card.push(card);
-        card = {Value: "0", Color: color[i]};
-        card.push(card);
+    for (let i = 0; i < color.length; i++) { 
+        for (let i = 0; i < (values.length); i++) { 
+            card = {Value: values[i], Color: color[i]};
+            deck.push(card);
+        }
+    }
+
+    /* every value 1 time in each color */
+    for (let i = 0; i < color.length; i++) { 
+        for (let i = 0; i < (values_2.length); i++) { 
+            card = {Value: values_2[i], Color: color[i]};
+            deck.push(card);
+        }
     }
 }
 
