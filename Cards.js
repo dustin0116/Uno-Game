@@ -11,14 +11,9 @@ function getDeck() {
     for (let i = 0; i < color.length; i++) { 
         for (let i = 0; i < (values.length); i++) { 
             card = {Value: values[i], Color: color[i]};
+            let card_2 = {Value: values[i], Color: color[i]};
             deck.push(card);
-        }
-    }
-
-    for (let i = 0; i < color.length; i++) { 
-        for (let i = 0; i < (values.length); i++) { 
-            card = {Value: values[i], Color: color[i]};
-            deck.push(card);
+            deck.push(card_2);
         }
     }
 
